@@ -1,0 +1,31 @@
+show databases;
+use hostel_project;
+show tables;
+select Registration_Details_FY.Std_Phone_No ,Registration_Details_FY.Password ,Registration_Details_SY.Std_Phone_No ,Registration_Details_SY.Password ,Registration_Details_TY.Std_Phone_No ,Registration_Details_TY.Password FROM Registration_Details_FY join Registration_Details_SY join Registration_Details_TY;
+select*from documents_one;
+select*from documents;
+select * from registration_details_fy;
+select * from registration_details_sy;
+select * from registration_details_ty;
+select * from images;
+select *from registration_details_ty where category='OPEN' and percentage ='81.00' order by percentage  desc;
+select *from registration_details_ty where category='OPEN' and percentage ='81.00';
+
+create table Registration_Details_FY( sr_no int primary key  auto_increment, Student_Name varchar(45),Std_Phone_No numeric(10) ,Year varchar(15),Branch varchar(4),Percentage decimal(5,2) ,Category varchar(10),Parent_Phone_No numeric(10),Email varchar(45),Password varchar(8));
+create table Registration_Details_SY( sr_no int primary key  auto_increment, Student_Name varchar(45),Std_Phone_No numeric(10) ,Year varchar(15),Branch varchar(4),Percentage decimal(5,2) ,Category varchar(10),Parent_Phone_No numeric(10),Email varchar(45),Password varchar(8));
+create table Registration_Details_TY( sr_no int primary key  auto_increment, Student_Name varchar(45),Std_Phone_No numeric(10) ,Year varchar(15),Branch varchar(4),Percentage decimal(5,2) ,Category varchar(10),Parent_Phone_No numeric(10),Email varchar(45),Password varchar(8));
+CREATE TABLE documents_one(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    document_data LONGBLOB
+);
+CREATE TABLE images (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image LONGBLOB
+);
+drop table images;
+
+drop table documents1;
+drop table  Registration_Details_FY;
+drop table  Registration_Details_SY;
+drop table  Registration_Details_TY;
+select Student_Name,Branch,Year,Percentage,category from Registration_Details_SY where  category='OPEN' and Branch ='If' order by percentage  desc limit 3
