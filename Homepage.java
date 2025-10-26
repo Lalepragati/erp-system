@@ -1,8 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-
+
 public class Homepage extends JFrame implements ActionListener{
     JLabel  l0,l1,htl,l2,logo,logo1,l3;
     JButton b1,b2,b3;
